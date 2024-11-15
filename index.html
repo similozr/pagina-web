@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Elixir Perfumes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+          rel="stylesheet" 
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="http://127.0.0.1:5500/index.html">
+                    <span class="navbar-logo text-white" style="font-size: 24px; font-weight: bold;">ELIXIR PERFUMES</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold text-white" href="#">MUJER</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold text-white" href="#">HOMBRE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold text-white" href="#">UNISEX</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold text-white" href="#">VER TODO</a>
+                        </li>
+                    </ul>
+    
+                    <form class="d-flex align-items-center form-search" role="search" style="margin: 20px;">
+                        <i class="fas fa-search"></i>
+                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                        <button class="btn btn-outline-success" type="button" style="border-radius: 25px; padding: 10px 20px;" 
+                                title="Carrito Vacío" data-bs-toggle="tooltip" data-bs-placement="top"
+                                onclick="window.location.href='Carrito.html'">
+                            <i class="bi bi-bag"></i>
+                        </button>                                       
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+
+
+    
+    <div id="mainCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://perfumesimperial.com.co/cdn/shop/files/Banner3.jpg?v=1725473666&width=1500" alt="Promo 1">
+                <div class="carousel-caption">
+                    <h3>Fragancias Exclusivas</h3>
+                    <p>Descubre las mejores fragancias al mejor precio</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://perfumesimperial.com.co/cdn/shop/files/Banner7.jpg?v=1725474248&width=1500" alt="Promo 2">
+                <div class="carousel-caption">
+                    <h3>Variedad y Calidad</h3>
+                    <p>Encuentra una amplia gama de productos de calidad</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#mainCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#mainCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+        </a>
+    </div>
+
+    <!-- Featured Products -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Productos Destacados</h2>
+        <div class="row">
+            <!-- Producto 1 -->
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="img/toy-boy.png" class="card-img-top" alt="Producto 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Toy Boy-Moschino</h5>
+                        <p class="card-text">Toy Boy de Moschino es una fragancia masculina atrevida y sofisticada, con notas frescas de bergamota y especias, un toque floral de rosa y magnolia, y una base cálida de vetiver y ámbar. Su frasco en forma de oso negro es icónico y divertido, reflejando su espíritu audaz.</p>
+                        <p class="card-text">$420,000 COP</p>
+                        <!-- Ejemplo de un producto en index.html -->
+                        <a href="Carrito.html" class="btn btn-primary" onclick="añadirAlCarrito('Toy Boy-Moschino', 420000, 'img/toy-boy.png')">Añadir al Carrito</a>
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- Producto 2 -->
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="img/Amber.png" class="card-img-top" alt="Producto 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Amber & Leather-AlHambra</h5>
+                        <p class="card-text">Amber & Leather de AlHambra es una fragancia intensa y elegante, que combina notas cálidas de ámbar y cuero con toques especiados y amaderados. Su aroma es profundo y sofisticado, ideal para quienes buscan un perfume fuerte y duradero con un aire de lujo oriental.</p>
+                        <p class="card-text">$225,000 COP</p>
+                        
+                        <a href="Carrito.html" class="btn btn-primary" onclick="añadirAlCarrito('Amber & Leather-AlHambra', 420000, 'img/Amber.png')">Añadir al Carrito</a>
+
+
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="img/Bharara.png" class="card-img-top" alt="Producto 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Bharara Niche</h5>
+                        <p class="card-text">Bharara Niche es una línea de fragancias de lujo, inspirada en el arte de la perfumería oriental y árabe. Ofrece aromas ricos y opulentos, con notas de especias, maderas, ámbar y almizcle, que evocan sensaciones cálidas y profundas. Estas fragancias están diseñadas para ser distintivas y duraderas, ideales para quienes buscan un perfume sofisticado y de alta calidad que refleje una personalidad única.</p>
+                        <p class="card-text">$308.000 COP</p>
+                        
+                        <a href="Carrito.html" class="btn btn-primary" onclick="añadirAlCarrito('Bharara Niche', 420000, 'img/Bharara.png')">Añadir al Carrito</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="bg-dark text-center py-4">
+        <p class="text-light">&copy; 2024 Adidas. Todos los derechos reservados.</p>
+    </footer>
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        
+        function añadirAlCarrito(nombre, precio, imagen) {
+            
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    
+           
+            carrito.push({ nombre: nombre, precio: precio, imagen: imagen });
+    
+            
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+        }
+    </script>
+    
+    
+</body>
+</html>

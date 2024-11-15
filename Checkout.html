@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container my-5">
+    <h1 class="text-center mb-4">Checkout</h1>
+
+    <div class="card mb-4">
+        <div class="card-header">Información del Cliente</div>
+        <div class="card-body">
+            <form id="checkout-form">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre completo" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="correo@ejemplo.com" required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="telefono" class="form-label">Teléfono</label>
+                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Número de teléfono" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="direccion" class="form-label">Dirección</label>
+                        <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Dirección de envío" required>
+                    </div>
+                </div>
+                <!-- Sección de pago -->
+                <div class="mb-3">
+                    <label for="tarjeta" class="form-label">Número de Tarjeta</label>
+                    <input type="text" class="form-control" id="tarjeta" name="tarjeta" placeholder="1234 5678 9101 1121" required>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="expiracion" class="form-label">Fecha de Expiración</label>
+                        <input type="text" class="form-control" id="expiracion" name="expiracion" placeholder="MM/AA" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="cvv" class="form-label">CVV</label>
+                        <input type="text" class="form-control" id="cvv" name="cvv" placeholder="123" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Realizar Pago</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Manejar el envío del formulario
+    document.getElementById("checkout-form").addEventListener("submit", async function (event) {
+        event.preventDefault(); // Evitar el envío normal del formulario
+
+        // Capturar los valores del formulario
+        const nombre = document.getElementById("nombre").value;
+        const correo_electronico = document.getElementById("email").value;
+        const telefono = document.getElementById("telefono").value;
+        const direccion = document.getElementById("direccion").value;
+        const tarjeta = document.getElementById("tarjeta").value;
+        const expiracion = document.getElementById("expiracion").value;
+        const cvv = document.getElementById("cvv").value;
+        console.log(nombre);
+
+        try {
+            
+            const response = await fetch("http://localhost:8000/clientes", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" }, 
+                body: JSON.stringify({ nombre, correo_electronico, telefono, direccion, tarjeta, expiracion, cvv }),
+            });
+
+            
+            if (response.ok) {
+                alert("Usuario registrado exitosamente");
+                document.getElementById("checkout-form").reset();
+            } else {
+                alert("Error al registrar el usuario");
+            }
+        } catch (error) {
+            console.error("Error en la solicitud:", error);
+            alert("Hubo un problema con el registro");
+        }
+    });
+</script>
+
+
+
+
+</body>
+</html>
